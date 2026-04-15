@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
-import { useLanguage } from "../context/LanguageContext";
 import logoUrl from "../../imports/Logo.svg";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,16 +16,12 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { name: t("nav.services"), href: "#services" },
-    { name: t("nav.projects"), href: "#projects" },
-    { name: t("nav.team"), href: "#team" },
-    { name: t("nav.about"), href: "#about" },
-    { name: t("nav.contact"), href: "#contact" },
+    { name: "Services", href: "#services" },
+    { name: "Nos Projets", href: "#projects" },
+    { name: "Notre Équipe", href: "#team" },
+    { name: "À Propos", href: "#about" },
+    { name: "Contact", href: "#contact" },
   ];
-
-  const toggleLanguage = () => {
-    setLang(lang === 'fr' ? 'en' : 'fr');
-  };
 
   return (
     <header
@@ -38,15 +32,9 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-       <a href='' className="flex items-center group">
-  <div className="shadow-lg transition-transform group-hover:scale-120">
-    <img 
-      src={logoUrl} 
-      alt="Logo PFE PIE" 
-      className="h-30 md:h-38 w-auto object-contain" 
-    />
-  </div>
-</a>
+        <a href="#" className="flex items-center group">
+          <img src={logoUrl} alt="Logo" className="h-30 md:h-38 w-auto object-contain" />
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
@@ -59,33 +47,17 @@ export function Header() {
               {link.name}
             </a>
           ))}
-          
-          <button 
-            onClick={toggleLanguage}
-            className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors border border-slate-700 hover:border-sky-500 rounded-full px-3 py-1.5"
-            aria-label="Change language"
-          >
-            <Globe size={16} />
-            {lang === 'fr' ? 'EN' : 'FR'}
-          </button>
 
           <a
             href="#contact"
             className="px-6 py-2.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-full transition-all hover:shadow-[0_0_15px_rgba(14,165,233,0.5)]"
           >
-            {t("nav.quote")}
+            Obtenir un Devis
           </a>
         </nav>
 
-        {/* Mobile Toggle & Language */}
+        {/* Mobile Toggle */}
         <div className="flex items-center gap-4 lg:hidden">
-          <button 
-            onClick={toggleLanguage}
-            className="flex items-center gap-1 text-xs font-medium text-slate-300 border border-slate-700 rounded-full px-2 py-1"
-          >
-            <Globe size={14} />
-            {lang.toUpperCase()}
-          </button>
           <button
             className="text-slate-300 hover:text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -118,7 +90,7 @@ export function Header() {
               className="px-6 py-3 bg-sky-500 text-slate-950 font-bold rounded-lg text-center mt-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {t("nav.quote")}
+              Obtenir un Devis
             </a>
           </div>
         </motion.div>

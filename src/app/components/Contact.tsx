@@ -1,10 +1,8 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
 
 export function Contact() {
-  const { t } = useLanguage();
   return (
     <section id="contact" className="py-24 bg-slate-950 relative overflow-hidden">
       {/* Decorative gradient */}
@@ -19,12 +17,12 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-sm font-bold tracking-widest text-sky-400 uppercase mb-4">{t('contact.badge')}</h2>
+            <h2 className="text-sm font-bold tracking-widest text-sky-400 uppercase mb-4">Contact</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('contact.title')}
+              Prêt à Concrétiser Votre Vision ?
             </h3>
             <p className="text-lg text-slate-400 mb-12 max-w-md">
-              {t('contact.desc')}
+              Discutons de votre prochain projet. Notre équipe est prête à concevoir une solution numérique qui propulsera votre entreprise.
             </p>
 
             <div className="space-y-8">
@@ -33,7 +31,7 @@ export function Contact() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <h5 className="text-white font-semibold mb-1">{t('contact.email')}</h5>
+                  <h5 className="text-white font-semibold mb-1">Écrivez-nous</h5>
                   <p className="text-slate-400">hello@codefluent.agency</p>
                 </div>
               </div>
@@ -43,7 +41,7 @@ export function Contact() {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <h5 className="text-white font-semibold mb-1">{t('contact.call')}</h5>
+                  <h5 className="text-white font-semibold mb-1">Appelez-nous</h5>
                   <p className="text-slate-400">+212 (0) 5 55 55 55 55</p>
                 </div>
               </div>
@@ -53,7 +51,7 @@ export function Contact() {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <h5 className="text-white font-semibold mb-1">{t('contact.visit')}</h5>
+                  <h5 className="text-white font-semibold mb-1">Visitez-nous</h5>
                   <p className="text-slate-400">Technopark, Tangier, Morocco</p>
                 </div>
               </div>
@@ -70,42 +68,42 @@ export function Contact() {
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-slate-300">{t('contact.form.name')}</label>
+                  <label htmlFor="name" className="text-sm font-medium text-slate-300">Nom</label>
                   <input 
                     type="text" 
                     id="name"
                     className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition-colors placeholder:text-slate-600"
-                    placeholder={t('contact.form.namePh')}
+                    placeholder="Jean Dupont"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-slate-300">{t('contact.form.email')}</label>
+                  <label htmlFor="email" className="text-sm font-medium text-slate-300">Email</label>
                   <input 
                     type="email" 
                     id="email"
                     className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition-colors placeholder:text-slate-600"
-                    placeholder={t('contact.form.emailPh')}
+                    placeholder="jean@exemple.com"
                   />
                 </div>
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-slate-300">{t('contact.form.subject')}</label>
+                <label htmlFor="subject" className="text-sm font-medium text-slate-300">Sujet</label>
                 <input 
                   type="text" 
                   id="subject"
                   className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition-colors placeholder:text-slate-600"
-                  placeholder={t('contact.form.subjectPh')}
+                  placeholder="Demande de Projet"
                 />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-slate-300">{t('contact.form.msg')}</label>
+                <label htmlFor="message" className="text-sm font-medium text-slate-300">Message</label>
                 <textarea 
                   id="message"
                   rows={4}
                   className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition-colors placeholder:text-slate-600 resize-none"
-                  placeholder={t('contact.form.msgPh')}
+                  placeholder="Parlez-nous de votre projet..."
                 ></textarea>
               </div>
 
@@ -113,7 +111,7 @@ export function Contact() {
                 type="button"
                 className="w-full py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-lg transition-all hover:shadow-[0_0_15px_rgba(14,165,233,0.4)]"
               >
-                {t('contact.form.send')}
+                Envoyer le Message
               </button>
             </form>
           </motion.div>
