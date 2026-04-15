@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { ExternalLink } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-
+import secreen from '../../imports/image.png'
 export function Projects() {
   const { t } = useLanguage();
   
@@ -11,7 +11,7 @@ export function Projects() {
     category: t('projects.cat.erp'),
     description: t('projects.p1.desc'),
     tags: ["React", "Laravel", "MySQL", "Agile"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBzb2Z0d2FyZSUyMGludGVyZmFjZSUyMGRhcmt8ZW58MXx8fHwxNzc2MjQ5NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: secreen,
   };
 
   const otherProjects = [
@@ -72,11 +72,7 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <div>
-                <a href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-950 hover:bg-slate-200 font-bold rounded-lg transition-colors">
-                  {t('projects.viewCase')}
-                </a>
-              </div>
+              
             </div>
             <div className="relative h-64 lg:h-auto overflow-hidden">
               <div className="absolute inset-0 bg-sky-500/10 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500"></div>

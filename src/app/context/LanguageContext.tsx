@@ -55,7 +55,7 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.cat.erp': 'Management Platform',
     'projects.cat.mobile': 'Mobile Application',
     'projects.cat.eco': 'E-Commerce',
-    'projects.p1.desc': 'A comprehensive pedagogical management system tailored for educational institutions. Streamlines student enrollment, course scheduling, grading, and administrative workflows in one centralized, secure platform.',
+    'projects.p1.desc': "Development of a comprehensive digital platform for ISMONTIC. The project integrates a modern institutional showcase website for the general public, coupled with a custom-built pedagogical management system (ERP) digitalizing the Management, Instructor, and Trainee workspaces.",
     'projects.p2.desc': 'A secure, sleek mobile banking experience allowing users to track expenses and invest seamlessly.',
     'projects.p3.desc': 'A high-conversion luxury retail storefront with dynamic inventory synchronization.',
 
@@ -135,7 +135,7 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.cat.erp': 'Plateforme de Gestion',
     'projects.cat.mobile': 'Application Mobile',
     'projects.cat.eco': 'E-Commerce',
-    'projects.p1.desc': 'Un système de gestion pédagogique complet adapté aux établissements éducatifs. Simplifie les inscriptions, la planification des cours, la notation et les flux administratifs sur une plateforme centralisée et sécurisée.',
+    'projects.p1.desc':"Développement d'une plateforme numérique complète pour l'ISMONTIC. Le projet intègre un site vitrine institutionnel moderne pour le grand public, couplé à un système de gestion pédagogique (ERP) sur mesure digitalisant les espaces Direction, Formateurs et Stagiaires.",
     'projects.p2.desc': 'Une expérience bancaire mobile sécurisée et élégante permettant aux utilisateurs de suivre leurs dépenses et d\'investir facilement.',
     'projects.p3.desc': 'Une vitrine e-commerce de luxe à fort taux de conversion avec synchronisation dynamique des stocks.',
 
