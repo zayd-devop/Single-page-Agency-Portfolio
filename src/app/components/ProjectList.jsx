@@ -1,5 +1,9 @@
 import { Github, ExternalLink, Code, Scale, Download, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
+import ismontic from  "../../imports/ismontic.jpeg"; 
+import login from  "../../imports/login.avif";
+import para from  "../../imports/para.png";
+import maintenance from  "../../imports/maintenance.png";
 
 const allProjects = [
   {
@@ -7,17 +11,17 @@ const allProjects = [
     title: "Application Cabinet d'Avocats",
     description: "Application de bureau pour la gestion centralisée des dossiers clients, de la facturation et de l'agenda. Solution sur mesure en Python.",
     tech: ["Python", "Tkinter", "MongoDB"],
-    image: "Lien_Vers_Image",
+    image: login,
     github: "https://github.com/yasu19-dev/Projet_Tkinter",
     demo: null,
   },
   {
     id: 2,
-    title: "Plateforme Tribunal",
-    description: "Digitalisation des procédures de référés. Système complet de suivi pour une meilleure efficacité judiciaire.",
-    tech: ["Laravel", "MySQL", "Bootstrap"],
-    image: "Lien_Vers_Image",
-    github: "https://github.com/yasu19-dev/Plateforme_Tribunal",
+    title: "Site Vitrine maintenance industrielle",
+    description: "Site vitrine pour une entreprise de maintenance industrielle, mettant en avant les services, les projets réalisés et les témoignages clients. Design moderne et responsive.",
+    tech: ["React.js", "Framer Motion", "Context API"],
+    image: maintenance,
+    github: "https://github.com/zaid",
     demo: null,
   },
   {
@@ -25,25 +29,16 @@ const allProjects = [
     title: "Clone Netflix",
     description: "Interface dynamique consommant l'API TMDb avec une gestion fluide des états et du catalogue.",
     tech: ["React.js", "API TMDb", "CSS Modules"],
-    image: "Lien_Vers_Image",
+    image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXRmbGl4fGVufDF8fHx8MTc3MjM3ODA4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     github: "https://github.com/yasu19-dev/projet-react-netflix",
     demo: "https://yasu19-dev.github.io/projet-react-netflix/",
   },
   {
     id: 4,
-    title: "Amazigh Quiz",
-    description: "Site interactif avec animations fluides utilisant Framer Motion pour la promotion de la culture Amazighe.",
-    tech: ["React.js", "Framer Motion", "Context API"],
-    image: "Lien_Vers_Image",
-    github: "https://github.com/yasu19-dev/amazigh-quiz",
-    demo: null,
-  },
-  {
-    id: 5,
     title: "Parapharmacie E-commerce",
     description: "Boutique en ligne avec gestion de panier, sessions PHP et génération de factures PDF automatisées.",
     tech: ["PHP", "JavaScript", "MySQL"],
-    image: "Lien_Vers_Image",
+    image: para,
     github: "https://github.com/yasu19-dev/parapharmacie-ecommerce",
     demo: null,
   },
@@ -60,37 +55,8 @@ export function ProjectList() {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Réalisations Concrètes</h2>
           <p className="text-slate-400 max-w-2xl">
-            Découvrez l'ensemble de mes travaux, mêlant rigueur juridique et innovation technique.
+            Découvrez l'ensemble de nos travaux, mêlant rigueur et innovation technique.
           </p>
-        </div>
-
-        {/* Excellence Académique (Tes Mémoires) */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* Mémoire Master */}
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-slate-900 border border-sky-500/30 rounded-xl p-8 flex flex-col h-full relative group">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-4 bg-slate-950 rounded-full border border-sky-500 shadow-[0_0_10px_rgba(14,165,233,0.1)]">
-                <Scale className="w-8 h-8 text-sky-400" />
-              </div>
-              <span className="bg-sky-500 text-slate-950 font-bold px-3 py-1 rounded-full text-[10px] uppercase">Excellence Académique</span>
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Mémoire de Master - Droit Privé</h3>
-            <p className="text-slate-400 italic border-l-2 border-sky-500 pl-4 mb-6">La dématérialisation des procédures judiciaires et son rôle dans la promotion de l'investissement.</p>
-            <a href="/memoire.pdf" className="mt-auto flex items-center justify-center gap-2 py-3 bg-slate-950 border border-sky-500 text-sky-400 rounded-lg font-semibold hover:bg-sky-500 hover:text-white transition-all"><Download size={18} /> Télécharger (PDF)</a>
-          </motion.div>
-
-          {/* Projet Licence */}
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-slate-900 border border-slate-800 rounded-xl p-8 flex flex-col h-full group hover:border-sky-500/30 transition-all">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-4 bg-slate-950 rounded-full border border-slate-800 group-hover:border-sky-500 transition-all">
-                <GraduationCap className="w-8 h-8 text-slate-400 group-hover:text-sky-400" />
-              </div>
-              <span className="bg-slate-800 text-slate-400 px-3 py-1 rounded-full text-[10px] uppercase">Fondations Juridiques</span>
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-3">PFE Licence - Droit</h3>
-            <p className="text-slate-400 italic border-l-2 border-slate-800 group-hover:border-sky-500 pl-4 mb-6 transition-all">L'indemnisation du retard du débiteur - Cas de la Covid-19.</p>
-            <a href="/pfe.pdf" className="mt-auto flex items-center justify-center gap-2 py-3 bg-slate-950 border border-slate-800 text-slate-400 rounded-lg font-semibold hover:border-sky-500 hover:text-sky-400 transition-all"><Download size={18} /> Télécharger (PDF)</a>
-          </motion.div>
         </div>
 
         {/* Séparateur */}

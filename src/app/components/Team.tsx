@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Shield, Layers, PenTool } from "lucide-react";
-import zaid from "../../imports/zaid.jpg";
+import zaid from "../../imports/zaid.png";
+import aya from "../../imports/aya.png";
+import yasmine from "../../imports/yasmine.png";
 
 export function Team() {
   const team = [
@@ -10,12 +12,12 @@ export function Team() {
       role: "Développeuse Lead",
       expertise: "Logique Globale, Architecture, Sécurité",
       icon: <Shield size={18} className="text-sky-400" />,
-      image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHdvbWFuJTIwcG9ydHJhaXQlMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwxfHx8fDE3NzYyNDk1NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      image: yasmine,
     },
     {
       name: "Zaid",
-      role: "Développeur Fonctionnel",
-      expertise: "Logique Métier, Formulaires, Responsive",
+      role: "Développeur Backend & API",
+      expertise: "API, Intégrations, Performance",
             icon: <Layers size={18} className="text-sky-400" />,
             image: zaid,
     },
@@ -24,7 +26,7 @@ export function Team() {
       role: "Développeuse UI & Données",
       expertise: "Interfaces Utilisateur, Data Vis, Identité",
       icon: <PenTool size={18} className="text-sky-400" />,
-      image: "https://images.unsplash.com/photo-1759873911583-f492fdb1ba21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHdvbWFuJTIwcG9ydHJhaXQlMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwxfHx8fDE3NzYyNDk1NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      image: aya,
     }
   ];
 

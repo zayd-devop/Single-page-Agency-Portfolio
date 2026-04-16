@@ -3,17 +3,16 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import ismontic from  "../../imports/ismontic.jpeg"; 
 import login from  "../../imports/login.avif";
-import para from  "../../imports/para.png";
-import maintenance from  "../../imports/maintenance.png";
 
-export function Projects({ onViewAll }) { // <--- Accepte la fonction onViewAll comme prop
+
+export function Projects({ onViewAll }) {
   // Le projet mis en avant (ton PFE de fin d'études)
   const mainProject = {
     title: "Gestion Pédagogique (PFE)",
     category: "ERP & Cloud",
     description: "Digitalisation complète de l'ISMONTIC. Ce projet pilote intègre un site vitrine institutionnel et un ERP sur mesure centralisant les espaces Direction, Formateurs et Stagiaires.",
     tags: ["React", "Tailwind CSS", "Laravel", "MySQL"],
-    image: ismontic , // Remplace par ton image réelle
+    image: ismontic,
   };
 
   // Les deux autres projets pour la grille de la landing page
@@ -32,20 +31,6 @@ export function Projects({ onViewAll }) { // <--- Accepte la fonction onViewAll 
       tags: ["React.js", "API TMDb", "CSS Modules"],
       image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXRmbGl4fGVufDF8fHx8MTc3MjM3ODA4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
-    {
-      title: "Parapharmacie en Ligne (E-commerce)",
-      category: "E-commerce",
-      description: "Plateforme full-stack sécurisée. Gestion dynamique du catalogue (JSON), système de panier avec sessions, et génération automatisée des reçus au format PDF.",
-      tags: ["PHP", "JavaScript", "Bootstrap", "MySQL"],
-      image: para,
-    },
-    {
-      title: "Site Vitrine maintenance industrielle",
-      category: "Site Vitrine",
-      description: "Site vitrine pour une entreprise de maintenance industrielle, mettant en avant les services, les projets réalisés et les témoignages clients. Design moderne et responsive.",
-      tags: ["Vue.js", "Node.js", "Socket.io"],
-      image: maintenance,
-    }
   ];
 
   return (
@@ -56,10 +41,14 @@ export function Projects({ onViewAll }) { // <--- Accepte la fonction onViewAll 
             <h2 className="text-sm font-bold tracking-widest text-sky-400 uppercase mb-4">Nos Réalisations</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-white">Études de Cas Phares</h3>
           </div>
-          {/* Ce lien devra pointer vers ta nouvelle page /projects */}
-          <a href="/projects" className="hidden md:flex items-center gap-2 text-sky-400 hover:text-sky-300 font-medium transition-colors">
+          
+          {/* CORRECTION ICI : Le bouton Desktop utilise maintenant onViewAll */}
+          <button 
+            onClick={onViewAll} 
+            className="hidden md:flex items-center gap-2 text-sky-400 hover:text-sky-300 font-medium transition-colors cursor-pointer"
+          >
             Voir Tous Les Projets <ExternalLink size={18} />
-          </a>
+          </button>
         </div>
 
         {/* Featured Main Project (PFE) */}
@@ -84,19 +73,33 @@ export function Projects({ onViewAll }) { // <--- Accepte la fonction onViewAll 
                 Voir sur GitHub
               </a>
             </div>
-            <div className="relative h-64 lg:h-auto overflow-hidden">
-              <img src={mainProject.image} alt={mainProject.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            
+            {/* CORRECTION ICI : Remplacement de object-cover par object-contain avec du padding */}
+            <div className="relative h-64 lg:h-auto lg:min-h-[400px] overflow-hidden bg-slate-950/50 p-4 lg:p-8 flex items-center justify-center">
+              <img 
+                src={mainProject.image} 
+                alt={mainProject.title} 
+                className="w-full h-full object-contain rounded-lg shadow-2xl group-hover:scale-105 transition-transform duration-700" 
+              />
             </div>
           </div>
         </motion.div>
 
-        {/* Grille des 2 autres projets */}
+        {/* Grille des autres projets */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {featuredProjects.map((project, index) => (
+          {/* Affichage limité à 2 projets dans la landing page pour garder un beau design */}
+          {featuredProjects.slice(0, 2).map((project, index) => (
             <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.2, duration: 0.6 }} className="group rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 flex flex-col">
-              <div className="relative h-64 overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              
+              {/* Ajout de object-cover object-top pour les petites cartes pour voir le haut du site */}
+              <div className="relative h-64 overflow-hidden bg-slate-950">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
+                />
               </div>
+              
               <div className="p-8 flex-grow flex flex-col">
                 <span className="text-sky-400 text-xs font-semibold mb-3 block tracking-wider uppercase">{project.category}</span>
                 <h4 className="text-2xl font-bold text-white mb-4">{project.title}</h4>
@@ -113,11 +116,11 @@ export function Projects({ onViewAll }) { // <--- Accepte la fonction onViewAll 
 
         <div className="mt-12 text-center md:hidden">
           <button 
-      onClick={onViewAll} // <--- Active le changement de vue
-      className="flex items-center gap-2 text-sky-400 ..."
-    >
-      Voir Tous Les Projets <ExternalLink size={18} />
-    </button>
+            onClick={onViewAll}
+            className="inline-flex items-center gap-2 text-sky-400 font-medium"
+          >
+            Voir Tous Les Projets <ExternalLink size={18} />
+          </button>
         </div>
       </div>
     </section>
