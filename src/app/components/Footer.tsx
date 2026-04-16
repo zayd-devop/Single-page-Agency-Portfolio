@@ -27,7 +27,7 @@ export function Footer() {
               <Linkedin size={18} />
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/code-fluent/" 
               className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500/50 transition-colors"
               aria-label="GitHub"
             >
