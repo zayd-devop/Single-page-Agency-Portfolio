@@ -1,31 +1,47 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Shield, Layers, PenTool } from "lucide-react";
+import { Shield, Layers, PenTool, Github } from "lucide-react";
 import zaid from "../../imports/zaid.png";
 import aya from "../../imports/aya.png";
 import yasmine from "../../imports/yasmine.png";
 
 export function Team() {
+    
   const team = [
     {
       name: "Yasmine",
       role: "Développeuse Lead",
       expertise: "Logique Globale, Architecture, Sécurité",
-      icon: <Shield size={18} className="text-sky-400" />,
+      icon:<a 
+              href="https://github.com/yasu19-dev" 
+              className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500/50 transition-colors"
+              aria-label="GitHub">
+              <Github size={18} />
+            </a> ,
       image: yasmine,
     },
     {
       name: "Zaid",
       role: "Développeur Backend & API",
       expertise: "API, Intégrations, Performance",
-            icon: <Layers size={18} className="text-sky-400" />,
-            image: zaid,
+      icon: <a 
+              href="https://github.com/zayd-devop" 
+              className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500/50 transition-colors"
+              aria-label="GitHub">
+              <Github size={18} />
+            </a>,
+      image: zaid,
     },
     {
       name: "Aya",
       role: "Développeuse UI & Données",
       expertise: "Interfaces Utilisateur, Data Vis, Identité",
-      icon: <PenTool size={18} className="text-sky-400" />,
+      icon: <a 
+              href="https://github.com/yasu19-dev" 
+              className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500/50 transition-colors"
+              aria-label="GitHub">
+              <Github size={18} />
+            </a>,
       image: aya,
     }
   ];

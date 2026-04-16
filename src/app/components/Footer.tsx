@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import logoUrl from "../../imports/Logo.svg";
 
 export function Footer() {
@@ -26,26 +26,13 @@ export function Footer() {
             >
               <Linkedin size={18} />
             </a>
-            <a 
-              href="https://github.com/zayd-devop" 
-              className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500/50 transition-colors"
-              aria-label="GitHub"
-            >
-              <Github size={18} />
-            </a><a 
-              href="https://github.com/yasu19-dev" 
-              className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500/50 transition-colors"
-              aria-label="GitHub"
-            >
-              <Github size={18} />
-            </a>
-            <a 
-              href="https://github.com/aya123-belghazi" 
-              className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500/50 transition-colors"
-              aria-label="GitHub"
-            >
-              <Github size={18} />
-            </a>
+            <a
+    href="mailto:contact.codefluent@gmail.com"
+    className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500/50 transition-colors"
+    aria-label="Email"
+  >
+    <Mail size={18} />
+        </a>
           </div>
 
         </div>
