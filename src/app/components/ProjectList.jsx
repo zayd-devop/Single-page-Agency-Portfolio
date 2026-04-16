@@ -4,28 +4,81 @@ import ismontic from  "../../imports/ismontic.jpeg";
 import login from  "../../imports/login.avif";
 import para from  "../../imports/para.png";
 import maintenance from  "../../imports/maintenance.png";
+import projet_ecommerce from  "../../imports/projet-ecommerce-php.png";
+import projet_ecommerce_react from  "../../imports/projet-ecommerce-react.png";
+import projet_portfolio_maker from  "../../imports/projet-portfolio-maker.png";
+import projet_gestion_medicale from  "../../imports/projet-gestion-medicale.jpg";
+import projet_boutique_wp from  "../../imports/projet-boutique-wp.jpeg";
 
 const allProjects = [
+  // --- Projets de la première liste ---
   {
     id: 1,
+    title: 'Site E-commerce Dynamique',
+    description: 'Création d\'un site de vente en ligne "from scratch". Conception d\'une base de données relationnelle sur mesure pour le catalogue et les clients, avec une attention particulière portée à la sécurisation des sessions et des formulaires.',
+    image: projet_ecommerce,
+    tech: ['PHP', 'MySQL'], // Adapté de "technologies" à "tech"
+    github: null,
+    demo: null
+  },
+  {
+    id: 2,
+    title: 'Application E-commerce Front-End',
+    description: 'Développement d\'une application de vente avec une interface client fluide (panier, paiement) et un Dashboard Admin sécurisé dédié à la gestion globale (produits, commandes, utilisateurs).',
+    image: projet_ecommerce_react, 
+    tech: ['React.js', 'Redux'],
+    github: null,
+    demo: null
+  },
+  {
+    id: 3,
+    title: 'Plateforme de Création de Portfolio',
+    description: 'Conception d\'un site web intuitif permettant de générer des portfolios en ligne personnalisés sans aucune compétence technique préalable. Interface responsive et moderne, avec gestion complète de l\'authentification et des données côté serveur.',
+    image: projet_portfolio_maker,
+    tech: ['HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'JavaScript', 'PHP', 'MySQL'],
+    github: null,
+    demo: null
+  },
+  {
+    id: 4,
+    title: 'Application de Gestion Médicale',
+    description: 'Développement d\'un logiciel de bureau destiné aux cabinets médicaux. Intègre la gestion complète des dossiers patients, la planification des rendez-vous et le suivi de l\'historique médical via une base de données NoSQL.',
+    image: projet_gestion_medicale,
+    tech: ['Python', 'Tkinter', 'MongoDB'],
+    github: null,
+    demo: null
+  },
+  {
+    id: 5,
+    title: 'Boutique en Ligne CMS',
+    description: 'Configuration, personnalisation et déploiement d\'un site e-commerce performant. Intégration de modules de paiement sécurisé et optimisation technique pour le référencement naturel (SEO).',
+    image: projet_boutique_wp,
+    tech: ['WordPress', 'WooCommerce', 'Astra', 'SEO'],
+    github: null,
+    demo: null
+  },
+
+  // --- Projets de la deuxième liste ---
+  {
+    id: 6,
     title: "Application Cabinet d'Avocats",
     description: "Application de bureau pour la gestion centralisée des dossiers clients, de la facturation et de l'agenda. Solution sur mesure en Python.",
     tech: ["Python", "Tkinter", "MongoDB"],
-    image: login,
+    image: login, // Ton import d'image
     github: "https://github.com/yasu19-dev/Projet_Tkinter",
     demo: null,
   },
   {
-    id: 2,
+    id: 7,
     title: "Site Vitrine maintenance industrielle",
     description: "Site vitrine pour une entreprise de maintenance industrielle, mettant en avant les services, les projets réalisés et les témoignages clients. Design moderne et responsive.",
     tech: ["React.js", "Framer Motion", "Context API"],
-    image: maintenance,
+    image: maintenance, // Ton import d'image
     github: "https://github.com/zaid",
     demo: null,
   },
   {
-    id: 3,
+    id: 8,
     title: "Clone Netflix",
     description: "Interface dynamique consommant l'API TMDb avec une gestion fluide des états et du catalogue.",
     tech: ["React.js", "API TMDb", "CSS Modules"],
@@ -34,14 +87,14 @@ const allProjects = [
     demo: "https://yasu19-dev.github.io/projet-react-netflix/",
   },
   {
-    id: 4,
+    id: 9,
     title: "Parapharmacie E-commerce",
     description: "Boutique en ligne avec gestion de panier, sessions PHP et génération de factures PDF automatisées.",
     tech: ["PHP", "JavaScript", "MySQL"],
-    image: para,
+    image: para, // Ton import d'image
     github: "https://github.com/yasu19-dev/parapharmacie-ecommerce",
     demo: null,
-  },
+  }
 ];
 
 export function ProjectList() {
